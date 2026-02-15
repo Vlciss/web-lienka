@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 97%;
+    --foreground: 220 20% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 20% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 20%;
+
+    --primary: 80 55% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 45 100% 55%;
+    --secondary-foreground: 220 20% 20%;
+
+    --muted: 40 20% 93%;
+    --muted-foreground: 220 10% 50%;
+
+    --accent: 0 75% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 40 20% 90%;
+    --input: 40 20% 90%;
+    --ring: 80 55% 45%;
+
+    --radius: 1rem;
+
+    /* Custom nursery tokens */
+    --nursery-green: 80 55% 45%;
+    --nursery-green-light: 95 60% 85%;
+    --nursery-yellow: 45 100% 55%;
+    --nursery-yellow-light: 48 100% 90%;
+    --nursery-red: 0 75% 55%;
+    --nursery-red-light: 0 80% 92%;
+    --nursery-blue: 200 70% 55%;
+    --nursery-blue-light: 200 70% 92%;
+    --nursery-sand: 35 40% 92%;
+    --nursery-sand-dark: 35 30% 85%;
+
+    --font-display: 'Nunito', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-display;
+    font-family: var(--font-display);
+    /* Improve mobile text rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Better touch experience */
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    /* Improve heading line height for mobile */
+    line-height: 1.2;
+  }
+
+  /* Improve minimum touch target size for better mobile UX */
+  a, button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Better mobile scrolling */
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@layer components {
+  .nursery-blob-green {
+    background: hsl(var(--nursery-green));
+  }
+  .nursery-blob-yellow {
+    background: hsl(var(--nursery-yellow));
+  }
+  .nursery-blob-red {
+    background: hsl(var(--nursery-red));
+  }
+  .nursery-card-green {
+    background: hsl(var(--nursery-green-light));
+    border: 2px solid hsl(var(--nursery-green) / 0.2);
+  }
+  .nursery-card-red {
+    background: hsl(var(--nursery-red-light));
+    border: 2px solid hsl(var(--nursery-red) / 0.2);
+  }
+  .nursery-card-yellow {
+    background: hsl(var(--nursery-yellow-light));
+    border: 2px solid hsl(var(--nursery-yellow) / 0.2);
+  }
+  .nursery-card-blue {
+    background: hsl(var(--nursery-blue-light));
+    border: 2px solid hsl(var(--nursery-blue) / 0.2);
+  }
+  .nursery-badge-green {
+    background: hsl(var(--nursery-green));
+    color: hsl(0 0% 100%);
+  }
+  .nursery-badge-red {
+    background: hsl(var(--nursery-red));
+    color: hsl(0 0% 100%);
+  }
+  .nursery-badge-yellow {
+    background: hsl(var(--nursery-yellow));
+    color: hsl(220 20% 20%);
+  }
+  .nursery-section-wave {
+    background: linear-gradient(180deg, hsl(var(--nursery-sand)) 0%, hsl(var(--background)) 100%);
+  }
+}
